@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================================================================= */
+html {
+  height: 100%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+/* фон документа */
+body {
+  /* background-color: rgb(27, 30, 30); */
+  background-color: #1e1e1e;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 599px;
+  width: 100%;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 50px;
+  text-align: center;
+  letter-spacing: 5px;
+  /* фон заголовка */
+  color: #0989cc;
+  margin-bottom: 20px;
+}
+
+/* ===================== счет =========================== */
+.score-block {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #4388b9;
+  margin-bottom: 20px;
+}
+.score-block span {
+  font-weight: 700;
+  color: #fff;
+}
+
+.score-block .score-block__score {
+  font-size: 30px;
+  color: rgb(230, 140, 140);
+}
+
+/* ===================== поле ================================ */
+.field {
+  /* фон рамки */
+  background-color: #0989cc;
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.field-button {
+  width: calc(100% / 3 - (10px / 3));
+  cursor: pointer;
+  font-size: 80px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.field-button,
+.field-button:disabled {
+  /* background-color: rgb(27, 30, 30); */
+  background-color: #1e1e1e;
+}
+.field-button:nth-child(3n) {
+  box-shadow: 5px 0 #1e1e1e;
+}
+
+/* фон крестика */
+.user-step {
+  /* color: #08d13f; */
+  color: #86ac41;
+}
+/* фон кружка */
+.computer-step {
+  color: #4cb5f5;
+}
+
+/* ================================ попап ============================= */
+.popup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: #1e1e1e;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.popup-body__text {
+  font-size: 80px;
+  color: #f78b2d;
+  font-weight: 700;
+}
+
+.popup-body__btn {
+  font-size: 20px;
+  display: block;
+  margin: 15px auto;
+  cursor: pointer;
+  background-color: #1e1e1e;
+  color: rgb(218, 68, 68);
+  transition: color 0.3s;
+  font-weight: 700;
+}
+
+.popup-body__btn:hover {
+  color: rgb(248, 17, 17);
+}
