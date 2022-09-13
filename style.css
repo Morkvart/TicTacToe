@@ -56,6 +56,8 @@ body {
 .wrapper {
   max-width: 599px;
   width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .title {
@@ -76,19 +78,14 @@ body {
   color: #4388b9;
   margin-bottom: 20px;
 }
-.score-block span {
-  font-weight: 700;
-  color: #fff;
-}
 
 .score-block .score-block__score {
   font-size: 30px;
-  color: rgb(230, 140, 140);
+  color: rgb(255, 255, 255);
 }
 
 /* ===================== поле ================================ */
 .field {
-  /* фон рамки */
   background-color: #0989cc;
   width: 100%;
   display: flex;
@@ -106,21 +103,38 @@ body {
 
 .field-button,
 .field-button:disabled {
-  /* background-color: rgb(27, 30, 30); */
   background-color: #1e1e1e;
 }
-.field-button:nth-child(3n) {
+.field-button:nth-child(1) {
+  box-shadow: -5px 0 #1e1e1e, 0 -5px #1e1e1e;
+}
+.field-button:nth-child(2) {
+  box-shadow: 0 -5px #1e1e1e;
+}
+.field-button:nth-child(3) {
+  box-shadow: 5px 0 #1e1e1e, 0 -5px #1e1e1e;
+}
+.field-button:nth-child(4) {
+  box-shadow: -5px 0 #1e1e1e;
+}
+.field-button:nth-child(6) {
   box-shadow: 5px 0 #1e1e1e;
 }
-
-/* фон крестика */
+.field-button:nth-child(7) {
+  box-shadow: -5px 0 #1e1e1e, 0 5px #1e1e1e;
+}
+.field-button:nth-child(8) {
+  box-shadow: 0 5px #1e1e1e;
+}
+.field-button:nth-child(9) {
+  box-shadow: 5px 0 #1e1e1e, 0 5px #1e1e1e;
+}
 .user-step {
-  /* color: #08d13f; */
   color: #86ac41;
 }
-/* фон кружка */
+
 .computer-step {
-  color: #4cb5f5;
+  color: #dedede;
 }
 
 /* ================================ попап ============================= */
@@ -157,4 +171,25 @@ body {
 
 .popup-body__btn:hover {
   color: rgb(248, 17, 17);
+}
+
+/* ================================= media ================================== */
+@media (max-width: 768px) {
+  .popup-body__text {
+    font-size: 60px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .score-block {
+    font-size: 16px;
+  }
+  .score-block .score-block__score {
+    font-size: 20px;
+  }
 }

@@ -160,14 +160,15 @@ function checkWin() {
             disabledButtons();
             setTimeout(() => {
                 showPopup(1)
-
             }, 1000);
             changeScore(1);
             return true;
         }
     }
     if (stepCount == 9) {
-        showPopup(2);
+        setTimeout(() => {
+            showPopup(2)
+        }, 1000);
     }
 }
 
