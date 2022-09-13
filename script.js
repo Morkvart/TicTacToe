@@ -244,6 +244,13 @@ function computerStep() {
             return tmp;
         }
     }
+    for (let i = 0; i < combinationArray.length; i++) {
+        if (combinationArray[i].includes('033') || combinationArray[i].includes('330') || combinationArray[i].includes('303')) {
+            let pos = combinationArray[i].indexOf('3');
+            let tmp = getRow(i, pos);
+            return tmp;
+        }
+    }
 }
 
 
