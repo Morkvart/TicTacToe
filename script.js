@@ -3,9 +3,6 @@
 let step = true;
 let stepCount = 0;
 
-// счет
-// let plauerScore = 0, computerScore = 0;
-
 //кнопки игрового поля
 let fieldArray = [3, 3, 3, 3, 3, 3, 3, 3, 3];
 
@@ -211,48 +208,6 @@ function setWinString(x) {
 }
 
 // ====================================== ход компьютера ======================================
-
-// function computerStep() {
-
-//     for (let i = 0; i < combinationArray.length; i++) {
-//         if (stepCount <= 1) {
-//             if (combinationArray[i].includes('0')) {
-//                 let pos = combinationArray[i].indexOf('3');
-//                 let tmp = getRow(i, pos);
-//                 return tmp;
-//             }
-
-//         }
-//         if (stepCount > 1) {
-//             if (combinationArray[i].includes('113') || combinationArray[i].includes('311') || combinationArray[i].includes('131')) {
-//                 let pos = combinationArray[i].indexOf('3');
-//                 let tmp = getRow(i, pos);
-//                 return tmp;
-//             }
-//             if (combinationArray[i].includes('003') || combinationArray[i].includes('300') || combinationArray[i].includes('030')) {
-
-//                 let pos = combinationArray[i].indexOf('3');
-//                 let tmp = getRow(i, pos);
-//                 return tmp;
-//             }
-//             //  else {
-//             //     if (combinationArray[i].includes('313') || combinationArray[i].includes('133') || combinationArray[i].includes('331')) {
-//             //         let pos = combinationArray[i].indexOf('3');
-//             //         let tmp = getRow(i, pos);
-//             //         return tmp;
-//             //     }
-//             // }
-//             // else {
-//             //     let pos = combinationArray[i].indexOf('3');
-//             //     let tmp = getRow(i, pos);
-//             //     return tmp;
-//             // }
-
-//         }
-//     }
-
-// }
-
 function computerStep() {
 
     if (stepCount < 2) {
