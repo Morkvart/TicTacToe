@@ -41,6 +41,8 @@ function newGame() {
     closePopup();
     // очищаем кнопки и снимаем блокировку
     clearButtonValue();
+    //удаляем отрисовку линии
+    clearLine();
     //сброс глобальных переменных к начальным значениям
     resetVars();
 }
@@ -119,6 +121,7 @@ function clearButtonValue() {
         buttons[i].innerText = '';
         buttons[i].classList.remove('user-step');
         buttons[i].classList.remove('computer-step');
+        buttons[i].classList.remove('win-line');
     }
 }
 
@@ -147,17 +150,19 @@ function checkWin() {
     for (let i = 0; i < combinationArray.length; i++) {
         if (combinationArray[i] == '000') {
             disabledButtons();
+            drawLine(i);
             setTimeout(() => {
                 showPopup(0)
-            }, 1000);
+            }, 1500);
             changeScore(0);
             return true;
         }
         if (combinationArray[i] == '111') {
             disabledButtons();
+            drawLine(i);
             setTimeout(() => {
                 showPopup(1)
-            }, 1000);
+            }, 1500);
             changeScore(1);
             return true;
         }
@@ -165,10 +170,63 @@ function checkWin() {
     if (stepCount == 9) {
         setTimeout(() => {
             showPopup(2)
-        }, 1000);
+        }, 1500);
     }
 }
 
+// отрисовка линии выйгрышной строки
+function drawLine(x) {
+
+    let line = document.getElementsByClassName('win-line');
+
+    if (x == 0) {
+        line[0].classList.add('win-line-horizontal');
+        line[0].style.top = 'calc(100%/6 - 6px)';
+        return;
+    }
+    if (x == 1) {
+        line[0].classList.add('win-line-horizontal');
+        line[0].style.top = 'calc(100%/6*3.02 - 6px)';
+        return;
+    }
+    if (x == 2) {
+        line[0].classList.add('win-line-horizontal');
+        line[0].style.top = 'calc(100%/6*5.04 - 6px)';
+        return;
+    }
+    if (x == 3) {
+        line[0].classList.add('win-line-vertical');
+        line[0].style.left = 'calc(100%/6 - 6px)';
+        return;
+    }
+    if (x == 4) {
+        line[0].classList.add('win-line-vertical');
+        line[0].style.left = 'calc(100%/6*3.02 - 6px)';
+        return;
+    }
+    if (x == 5) {
+        line[0].classList.add('win-line-vertical');
+        line[0].style.left = 'calc(100%/6*5.04 - 6px)';
+        return;
+    }
+    if (x == 6) {
+        line[0].classList.add('win-line-angled');
+        return;
+    }
+    if (x == 7) {
+        line[0].classList.add('win-line-angled-rev');
+        return;
+    }
+
+}
+
+//удаление выйгрышной линии
+function clearLine() {
+    let line = document.getElementsByClassName('win-line');
+    line[0].className = 'win-line';
+    line[0].style.top = '';
+    line[0].style.left = '';
+}
 
 // ======================================= счет ===========================================
 
